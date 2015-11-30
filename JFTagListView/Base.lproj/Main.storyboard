@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EOX-kO-W0n">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="wrd-tJ-0Lq">
+            <objects>
+                <navigationController id="EOX-kO-W0n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="25G-sU-Y8g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pMI-Kx-KqE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ce-oj-4yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-582" y="218"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="phO-La-q8S">
+                                <rect key="frame" x="200" y="542" width="200" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="gYW-hC-d5f"/>
+                                    <constraint firstAttribute="width" constant="200" id="oZW-Xn-yUX"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="单单显示"/>
+                                    <segment title="编辑状态"/>
+                                    <segment title="选择状态"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeTagMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="5t1-mh-sdr"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注：单单显示状态为不可点击" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bb-ZF-VYX">
+                                <rect key="frame" x="216" y="578" width="169" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="BH6-aS-ezB"/>
+                                    <constraint firstAttribute="height" constant="21" id="pqB-XO-cYs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Bb-ZF-VYX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Es1-jp-CAX"/>
+                            <constraint firstItem="1Bb-ZF-VYX" firstAttribute="top" secondItem="phO-La-q8S" secondAttribute="bottom" constant="8" id="P7C-SJ-3Jo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Bb-ZF-VYX" secondAttribute="bottom" constant="1" id="bKa-tD-PL1"/>
+                            <constraint firstItem="phO-La-q8S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tTU-zy-owp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c0Q-nA-K0a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79" y="213"/>
+        </scene>
+    </scenes>
+</document>
