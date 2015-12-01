@@ -16,11 +16,11 @@
 		2C49764A1C0BF7F50076C5D0 /* JFTagListViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4976491C0BF7F50076C5D0 /* JFTagListViewTests.m */; };
 		2C4976551C0BF7F60076C5D0 /* JFTagListViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4976541C0BF7F60076C5D0 /* JFTagListViewUITests.m */; };
 		2C4976651C0BF9750076C5D0 /* JFTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4976641C0BF9750076C5D0 /* JFTagListView.m */; settings = {ASSET_TAGS = (); }; };
-		2C4976721C0C2C850076C5D0 /* UIView+JFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C49766F1C0C2C850076C5D0 /* UIView+JFExtension.m */; settings = {ASSET_TAGS = (); }; };
 		2C4976731C0C2C850076C5D0 /* btn_removeTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4976711C0C2C850076C5D0 /* btn_removeTag@2x.png */; settings = {ASSET_TAGS = (); }; };
 		2C4976771C0C42D20076C5D0 /* AddTagVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4976751C0C42D20076C5D0 /* AddTagVC.m */; settings = {ASSET_TAGS = (); }; };
 		2C4976781C0C42D20076C5D0 /* AddTagVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4976761C0C42D20076C5D0 /* AddTagVC.xib */; settings = {ASSET_TAGS = (); }; };
 		2C49767A1C0C4AAA0076C5D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4976791C0C4AAA0076C5D0 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		2CC74D9A1C0D909E002E35DD /* UIView+JFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC74D991C0D909E002E35DD /* UIView+JFExtension.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +59,13 @@
 		2C4976561C0BF7F60076C5D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4976631C0BF9750076C5D0 /* JFTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTagListView.h; sourceTree = "<group>"; };
 		2C4976641C0BF9750076C5D0 /* JFTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTagListView.m; sourceTree = "<group>"; };
-		2C49766E1C0C2C850076C5D0 /* UIView+JFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JFExtension.h"; sourceTree = "<group>"; };
-		2C49766F1C0C2C850076C5D0 /* UIView+JFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JFExtension.m"; sourceTree = "<group>"; };
 		2C4976711C0C2C850076C5D0 /* btn_removeTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_removeTag@2x.png"; sourceTree = "<group>"; };
 		2C4976741C0C42D20076C5D0 /* AddTagVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTagVC.h; sourceTree = "<group>"; };
 		2C4976751C0C42D20076C5D0 /* AddTagVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTagVC.m; sourceTree = "<group>"; };
 		2C4976761C0C42D20076C5D0 /* AddTagVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTagVC.xib; sourceTree = "<group>"; };
 		2C4976791C0C4AAA0076C5D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CC74D981C0D909E002E35DD /* UIView+JFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JFExtension.h"; sourceTree = "<group>"; };
+		2CC74D991C0D909E002E35DD /* UIView+JFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JFExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,19 +165,10 @@
 			children = (
 				2C4976631C0BF9750076C5D0 /* JFTagListView.h */,
 				2C4976641C0BF9750076C5D0 /* JFTagListView.m */,
-				2C49766D1C0C2C850076C5D0 /* Category */,
+				2CC74D971C0D909E002E35DD /* Category */,
 				2C4976701C0C2C850076C5D0 /* Resource */,
 			);
 			path = JFTagListClass;
-			sourceTree = "<group>";
-		};
-		2C49766D1C0C2C850076C5D0 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				2C49766E1C0C2C850076C5D0 /* UIView+JFExtension.h */,
-				2C49766F1C0C2C850076C5D0 /* UIView+JFExtension.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		2C4976701C0C2C850076C5D0 /* Resource */ = {
@@ -186,6 +177,15 @@
 				2C4976711C0C2C850076C5D0 /* btn_removeTag@2x.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		2CC74D971C0D909E002E35DD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2CC74D981C0D909E002E35DD /* UIView+JFExtension.h */,
+				2CC74D991C0D909E002E35DD /* UIView+JFExtension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,12 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC74D9A1C0D909E002E35DD /* UIView+JFExtension.m in Sources */,
 				2C4976371C0BF7F50076C5D0 /* ViewController.m in Sources */,
 				2C4976651C0BF9750076C5D0 /* JFTagListView.m in Sources */,
 				2C4976341C0BF7F50076C5D0 /* AppDelegate.m in Sources */,
 				2C4976771C0C42D20076C5D0 /* AddTagVC.m in Sources */,
 				2C4976311C0BF7F50076C5D0 /* main.m in Sources */,
-				2C4976721C0C2C850076C5D0 /* UIView+JFExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +467,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				INFOPLIST_FILE = JFTagListView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -480,7 +479,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				INFOPLIST_FILE = JFTagListView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -30,18 +30,27 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self creatUI];
+    
+}
+
+-(void)creatNavWithType:(TagStateType)type{
+    if (type == TagStateEdit) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(changeEditState:)];
+    }else{
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 
 -(void)creatUI{
     //Tag数据
-    _tagArray = [NSMutableArray arrayWithObjects:@"第一个",@"2",@"标签",@"长文字标签", nil];
+    _tagArray = [NSMutableArray arrayWithObjects:@"第一个",@"第2😢😊",@"标签",@"长文字标签",@"第五个标签",@"6",@"第七",@"八个", nil];
     self.tagStateType = TagStateNormal;//单单显示模式
     
     //TagView
     self.tagList = [[JFTagListView alloc] initWithFrame:CGRectMake(0, 64+10, JF_Screen_Width, JF_Screen_Height)];
     self.tagList.delegate = self;
-    [self.tagList creatUI:_tagArray];
+    [self.tagList creatUI:_tagArray];   //传入Tag数组初始化界面
     [self.view addSubview:self.tagList];
 
     //以下属性是可选的
@@ -70,7 +79,7 @@
 }
 
 -(void)tagList:(JFTagListView *)taglist heightForView:(float)listHeight{
-
+    //这里设置TagView的高度
 }
 
 //进入添加标签界面
@@ -95,7 +104,35 @@
 - (IBAction)changeTagMode:(UISegmentedControl *)sender {
     self.tagStateType = (int)sender.selectedSegmentIndex;
     self.tagList.tagStateType = self.tagStateType;
+    
+    //刷新界面默认为0.5秒，可以自行修改
     [self.tagList reloadData:_tagArray andTime:0.3];
+    
+    //改变导航栏编辑和完成状态
+    [self creatNavWithType:self.tagStateType];
+}
+
+#pragma mark- 是否显示添加tag按钮
+- (IBAction)changeShowAddTagButton:(UISwitch *)sender {
+    self.tagList.is_can_addTag = sender.on;
+    
+    //刷新界面默认为0.5秒，可以自行修改
+    [self.tagList reloadData:_tagArray andTime:0.1];
+}
+
+#pragma mark-
+
+-(void)changeEditState:(UIBarButtonItem *)sender{
+    
+    if ([sender.title isEqualToString:@"编辑"]) {
+        self.tagList.tagStateType = TagStateEdit;
+        sender.title = @"完成";
+    }else{
+        self.tagList.tagStateType = TagStateSelect;
+        sender.title = @"编辑";
+    }
+    //刷新界面默认为0.5秒，可以自行修改
+    [self.tagList reloadData:_tagArray andTime:0];
 }
 
 - (void)didReceiveMemoryWarning {

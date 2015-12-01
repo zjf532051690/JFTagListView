@@ -17,9 +17,8 @@
 #define K_Tag_Top_Margin      10.0f
 #define K_Tag_Bottom_Margin   K_Tag_Top_Margin
 
-
 #define Image_Width  10
-#define Image_Height  10
+#define Image_Height  Image_Width
 
 #define KTapLabelTag       10086
 #define KButtonTag         12580
@@ -29,15 +28,14 @@
 
 
 //设备屏幕尺寸
-#define Screen_Height       ([UIScreen mainScreen].bounds.size.height)
-#define Screen_Width        ([UIScreen mainScreen].bounds.size.width)
-
+#define JF_Screen_Height       ([UIScreen mainScreen].bounds.size.height)
+#define JF_Screen_Width        ([UIScreen mainScreen].bounds.size.width)
 
 
 @interface JFTagListView ()<UIAlertViewDelegate>{
     
     CGRect  previousFrame ;
-    int     tagView_height ;
+    float   tagView_height ;
     NSInteger tagIndex;
 }
 
@@ -60,17 +58,11 @@
 
 -(void)creatUI:(NSMutableArray *)tagArr{
     
-    NSLog(@"%@",self.tagArr);
-    
     self.tagArr = [NSMutableArray arrayWithArray:[tagArr mutableCopy]];
-    
-    NSLog(@"%@",self.tagArr);
     
     if (self.is_can_addTag) {//如果可以添加标签，那么数组就多一个添加标签按钮
         [self.tagArr addObject:self.addTagStr.length>0?self.addTagStr:@"添加标签"];
     }
-    NSLog(@"%@",self.tagArr);
-    
     tagView_height = 0;
     
     self.backgroundColor = self.tagViewBackgroundColor?self.tagViewBackgroundColor:[UIColor whiteColor];
@@ -106,7 +98,7 @@
         
         CGRect newRect = CGRectZero;
         
-        if (previousFrame.origin.x + previousFrame.size.width + Size_str.width + K_Tag_Right_Margin > Screen_Width) {
+        if (previousFrame.origin.x + previousFrame.size.width + Size_str.width + K_Tag_Right_Margin > JF_Screen_Width) {
             
             newRect.origin = CGPointMake(10, previousFrame.origin.y + Size_str.height + K_Tag_Bottom_Margin);
             tagView_height += Size_str.height + K_Tag_Bottom_Margin;
@@ -217,14 +209,6 @@
 - (void)clickTag:(UIButton *)sender{
     tagIndex = sender.tag-KButtonTag;
     
-    if (self.tagStateType == TagStateSelect) {
-        //选择tag
-        if ([self.delegate respondsToSelector:@selector(tagList:clickedButtonAtIndex:)]) {
-            [self.delegate tagList:self clickedButtonAtIndex:tagIndex];
-        }
-        return;
-    }
-    
     if (self.is_can_addTag) {
         if (tagIndex == self.tagArr.count-1) {
             //进入添加Tag的界面
@@ -236,6 +220,15 @@
             return;
         }
     }
+    
+    if (self.tagStateType == TagStateSelect) {
+        //选择tag
+        if ([self.delegate respondsToSelector:@selector(tagList:clickedButtonAtIndex:)]) {
+            [self.delegate tagList:self clickedButtonAtIndex:tagIndex];
+        }
+        return;
+    }
+    
     
     if (self.tagStateType == TagStateEdit) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"是否删除标签?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
